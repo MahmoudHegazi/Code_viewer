@@ -1,5 +1,31 @@
 # Code-editor and virtual hosting app
 
+
+If all you want to do is serve the same template with the new language setting, then it helps to know that home_page() view is just a function. You can just call it:
+
+# ----- Important -----------
+```python
+
+@app.route('/lang=<language>')
+def home_page_language(language):
+    return home_page(language)
+    
+```
+Better still, you can register views under multiple routes, you don't actually need a second function here; just move the /lang=<language> registration to the home_page() function:
+
+```python
+@app.route('/')
+@app.route('/lang=<language>')
+def home_page(language='en'):
+    return render_template(f"homepage - {language}.html")
+
+
+```
+
+
+
+------------------------------
+
 ## !before starting Say what is this (read this part):
 who In your Team Can build Code editor and host the submited code template and give the user page it's work like htmlpasta.com
 this is a restfull API and it use Python function to generate random not reapted fake domain and then
