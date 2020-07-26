@@ -224,8 +224,8 @@ def getpage(user_url):
 """ this for profile with parameter
 @app.route('/profile/<int:user_id>/', methods=['GET'])
 def getpage(user_id):    
-    gettemplate = session.query(newUrls).filter_by(user_id=user_id).first()
-    userid = gettemplate.id
+    getuser = session.query(Users).filter_by(id=user_id).first()
+    userid = getuser.id
     return profile(userid)
 
 """
