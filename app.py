@@ -222,7 +222,7 @@ def getpage(user_url):
     return userpage
 
 """ this for profile with parameter
-@app.route('/host/<int:user_id>/', methods=['GET'])
+@app.route('/profile/<int:user_id>/', methods=['GET'])
 def getpage(user_id):    
     gettemplate = session.query(newUrls).filter_by(user_id=user_id).first()
     userid = gettemplate.id
