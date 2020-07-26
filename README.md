@@ -4,6 +4,7 @@
 If all you want to do is serve the same template with the new language setting, then it helps to know that home_page() view is just a function. You can just call it:
 
 # ----- Important -----------
+vagrant provision (restart vagrant up)
 ```python
 
 @app.route('/lang=<language>')
